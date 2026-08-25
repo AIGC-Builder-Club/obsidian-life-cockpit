@@ -6,6 +6,8 @@
 
 插件的数据默认落在笔记库里的 `LifeCockpit/` 文件夹（首次运行时可以选别处）；本页与手册里出现的作者个人目录，只是他自己 vault 的布局——装上之后都能在设置里改。
 
+> 🏠 **想先看这个作品是什么、长什么样：[仓库首页 README](../../README.md)**——那里有截图、大白话讲的八根轴、安装与路线图。
+>
 > 📖 **完整用法在 [`docs/使用手册.md`](docs/使用手册.md)**——安装步骤、命令面板全部清单、每一种落盘格式、每一条行为边界，都在那份手册里。本页只回答三个问题：这是什么、为什么做成这样、现在做到了哪一步。
 
 ## 为什么会有它
@@ -77,7 +79,7 @@ flowchart TB
 这个作品分四个阶段开放，这不是弃坑：
 
 1. **阶段一（现在）· 看得懂** —— 全部源码、测试与设计文档就在这个仓库里，本篇 README 就是给你读的。当前版本 0.19.0，桌面端。
-2. **阶段二 · 装得上** —— 打磨一键安装与发布渠道，不用再手动拷贝三个文件。
+2. **阶段二 · 装得上** —— 已通：Release 三件套 + BRAT（`AIGC-Builder-Club/obsidian-life-cockpit`），打 tag 自动发版，不用再手动拷贝三个文件；社区插件市场尚未提交。
 3. **阶段三 · 后端** —— 开放同步层（Convex 后端）的部署方式，跨设备同步与飞书写回调度可以自己搭。
 4. **阶段四 · 服务器** —— 外部管线（飞书导出执行机、微信归档服务器）的服务器侧部署样例。
 
@@ -96,4 +98,4 @@ flowchart TB
 
 - 许可证：本仓库（源码、测试、文档与安装产物）整体以 [AGPL-3.0-only](../../LICENSE) 发布。
 - 致谢：工程形态承袭 [Easy-Git-Maintained](https://github.com/hanshou101/Easy-Git-Maintained)；「内容没变就不写盘」的幂等写法源自 RefBake 的实践；地基站在 Obsidian、Electron、esbuild、Convex 与 Node.js 测试生态上。
-- 反馈：欢迎提 [GitHub Issues](https://github.com/hanshou101/obsidian-life-cockpit/issues)。
+- 反馈：欢迎提 [GitHub Issues](https://github.com/AIGC-Builder-Club/obsidian-life-cockpit/issues)。
