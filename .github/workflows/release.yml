@@ -1,0 +1,33 @@
+name: Release
+
+# 打任意 tag 即把安装三件套作为 Release assets 传上去——
+# BRAT 与 Obsidian 社区插件市场都认这个形态。
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload dist trio as release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+          ASSETS=(dist/life-cockpit/main.js dist/life-cockpit/manifest.json dist/life-cockpit/styles.css)
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" "${ASSETS[@]}" --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$TAG" "${ASSETS[@]}" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "Life Cockpit ${TAG}" \
+              --generate-notes
+          fi
